@@ -24,7 +24,10 @@
                         </router-link>
 
                         <Poptip v-else trigger="hover" placement="bottom" :transfer=true>
-                            <a class="nav_button_text">{{username}}</a>
+                            <div class="poptip-div">
+                                <img v-if="profilePhoto!==null" :src="encodeImg" height="30px" width="30px"/>
+                                <span class="nav_button_text">{{username}}</span>
+                            </div>
                             <div slot="content" class="pop-menu">
                                 <div class="wrapper">
                                     <router-link to="notepad">
@@ -62,13 +65,14 @@
 
         data: () => ({
             value: "",
-            username: ""
+            username: "",
+            profilePhoto: ""
         }),
 
         mounted: function () {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "/getUsername", true);
+            xhr.open("GET", "/userProfile", true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
             xhr.onreadystatechange = () => {
@@ -80,6 +84,11 @@
                     console.log(response.status);
                     if (response.status) {
                         this.username = response.username;
+                        this.profilePhoto = response.profilePhoto;
+                    } else {
+                        this.$Message.error("拉取个人信息失败！");
+                        this.username = "用户";
+                        this.profilePhoto = null;
                     }
                 }
             };
@@ -123,6 +132,12 @@
 
         },
 
+        computed: {
+            encodeImg: function () {
+                return "data:image/png;base64," + this.profilePhoto;
+            }
+        },
+
         watch: {
             word(curVal, oldVal) {
                 if (curVal) {
@@ -151,6 +166,7 @@
     }
 
     .nav_button_text {
+        margin-left: 10px;
         font-size: 12px;
     }
 
@@ -180,6 +196,19 @@
 
     .pop-menu {
         text-align: center;
+    }
+
+    .poptip-div {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .poptip-div img {
+        vertical-align: middle;
+    }
+
+    .poptip-div span {
+        vertical-align: middle;
     }
 
 </style>

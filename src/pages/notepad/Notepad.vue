@@ -244,6 +244,7 @@
     import ISwitch from "iview/src/components/switch/switch";
 
     // import Info from "../../assets/data-notepad.json"
+    import * as util from '../../utils/util'
 
     export default {
         components: {
