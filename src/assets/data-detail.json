@@ -1,0 +1,32 @@
+{
+    "id": "10001",
+    "title": "C++类模板",
+    "qText": "<p>类模板定义如下：</p><p><code>&nbsp;template <class t,=\"\" int=\"\" low,=\"\" high=\"\">\n\tclass Array {….};&nbsp;</class></code></p><p>&nbsp;对该类模板实例化正确的是（）</p><p>&nbsp;A．Array&lt;float, 0, 20&gt;\t x;\t</p><p>&nbsp;B．Array&lt;int, int, int&gt;  x;\t</p><p>&nbsp;C．template&lt;int, 0, 20&gt;  x;&nbsp;</p><p>&nbsp;D．Array&lt;int, 0, int&gt;  x;&nbsp; &nbsp;</p>",
+    "reason": "看星星去了",
+    "qTag": ["C++", "类模板"],
+    "cAnswer": "A",
+    "createTime": 1495014090000,
+    "bySelf": true,
+
+    "viewCount": 7,
+    "editCount": 2,
+    "redoLite": {
+        "redoCount": 3,
+        "redoCorrectCount": 1
+    },
+
+    "redo": [
+        {
+            "rAnswer": "a",
+            "rTime": 1495014390000
+        },
+        {
+            "rAnswer": "b",
+            "rTime": 1495014390000
+        },
+        {
+            "rAnswer": "d",
+            "rTime": 1495014390000
+        }
+    ]
+}
