@@ -31,11 +31,11 @@
                             <div slot="content" class="pop-menu">
                                 <div class="wrapper">
                                     <router-link to="notepad">
-                                        <Button type="text" icon="android-person">个人空间</Button>
+                                        <Button type="text" icon="android-person">主页</Button>
                                     </router-link>
                                 </div>
                                 <div class="wrapper">
-                                    <router-link to="#">
+                                    <router-link to="profile">
                                         <Button type="text" icon="android-settings">设置</Button>
                                     </router-link>
                                 </div>

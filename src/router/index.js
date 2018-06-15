@@ -6,6 +6,7 @@ import Register from '@/pages/register/Register.vue'
 import Notepad from '@/pages/notepad/Notepad.vue'
 import Item from '@/pages/item/Item.vue'
 import Edit from '@/pages/edit/Edit.vue'
+import Profile from '@/pages/profile/Profile.vue'
 import Admin from '@/pages/admin/Admin.vue'
 import AdminHome from '@/pages/admin/children/home/Home.vue'
 import AdminLogin from '@/pages/admin/children/Login.vue'
@@ -61,6 +62,11 @@ export default new Router({
                     path: '/edit',
                     name: 'Edit',
                     component: Edit
+                },
+                {
+                    path: '/profile',
+                    name: 'Profile',
+                    component: Profile
                 },
                 {
                     path: '/admin',
