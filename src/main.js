@@ -6,10 +6,13 @@ import router from './router'
 
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
+
+import VCharts from 'v-charts'
 // import xss from 'xss'
 
 Vue.config.productionTip = false
 Vue.use(iView)
+Vue.use(VCharts)
 
 // Vue.use(xss);
 
