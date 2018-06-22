@@ -24,7 +24,7 @@
         mounted: function () {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "/getList", true);
+            xhr.open("GET", "/item/list", true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
             xhr.onreadystatechange = () => {
@@ -147,7 +147,7 @@
                     content: '<p>确认删除？</p>',
                     onOk: () => {
                         let xhr = new XMLHttpRequest();
-                        xhr.open("POST", "/deleteItem", true);
+                        xhr.open("DELETE", "/item/entry?id=" + this.col_data[index].id, true);
                         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                         xhr.onreadystatechange = () => {
@@ -166,7 +166,7 @@
                                 }
                             }
                         };
-                        xhr.send("id=" + this.col_data[index].id);
+                        xhr.send();
                     },
                     onCancel: () => {
                         // this.$Message.info('Clicked cancel');

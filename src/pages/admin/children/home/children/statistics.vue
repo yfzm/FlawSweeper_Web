@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="total-number">错题总数： 974</div>
+        <div class="total-number">错题总数： {{total_num}}</div>
 
         <Tabs value="name1">
-            <TabPane label="按用户查看" name="name1">
+            <TabPane label="按用户查看" name="name1" @on-click="getUserInfo">
                 <Table stripe :columns="style_user" :data="data_user"></Table>
             </TabPane>
             <TabPane label="按错题查看" name="name2">
@@ -52,6 +52,8 @@
 
         data () {
             return {
+                total_num: 0,
+
                 style_user: [
                     {
                         title: '用户名',
@@ -222,7 +224,50 @@
                 data_list: TagQuestionData,
 
             }
-        }
+        },
+
+        mounted: function() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "/statistics/item/num", true);
+            xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = () => {
+                console.log(xhr.readyState + "  " + xhr.status);
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText);
+                    let numResponse = JSON.parse(xhr.responseText);
+                    console.log(numResponse);
+                    console.log(numResponse.status);
+                    if (numResponse.status) {
+                        this.total_num = numResponse.num;
+                    }
+                }
+            };
+            xhr.send();
+        },
+
+        methods: {
+            getUserInfo: function () {
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "/statistics/item", true);
+                xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+                xhr.onreadystatechange = () => {
+                    console.log(xhr.readyState + "  " + xhr.status);
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText);
+                        let numResponse = JSON.parse(xhr.responseText);
+                        console.log(numResponse);
+                        console.log(numResponse.status);
+                        if (numResponse.status) {
+                            this.total_num = numResponse.num;
+                        }
+                    }
+                };
+                xhr.send();
+            }
+
+        },
     }
 </script>
 

@@ -292,7 +292,7 @@
         methods: {
             requestData: function (page, method, word="") {
                 let xhr = new XMLHttpRequest();
-                xhr.open("GET", "/getList?page=" + page + "&method=" + method + "&word=" + word, true);
+                xhr.open("GET", "/item/list?page=" + page + "&method=" + method + "&word=" + word, true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {

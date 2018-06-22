@@ -230,7 +230,7 @@
                 console.log(data);
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/redo", true);
+                xhr.open("POST", "/item/redo", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {
@@ -280,7 +280,7 @@
                     this.delete_topic = false;
 
                     let xhr = new XMLHttpRequest();
-                    xhr.open("POST", "/deleteItem", true);
+                    xhr.open("DELETE", "/item/entry?id=" + this.item_id, true);
                     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                     xhr.onreadystatechange = () => {
@@ -299,7 +299,7 @@
                             }
                         }
                     };
-                    xhr.send("id=" + this.item_id);
+                    xhr.send();
                 }, 2000);
             },
 
@@ -329,7 +329,7 @@
             this.item_id = this.$route.query.id;
 
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "/getDetail?id=" + this.$route.query.id, true);
+            xhr.open("GET", "/item/entry?id=" + this.$route.query.id, true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
             xhr.onreadystatechange = () => {

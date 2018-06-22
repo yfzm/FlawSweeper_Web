@@ -62,7 +62,7 @@
             this.item_id = this.$route.query.id;
 
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "/getDetail?id=" + this.item_id, true);
+            xhr.open("GET", "/item/entry?id=" + this.item_id, true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
             xhr.onreadystatechange = () => {

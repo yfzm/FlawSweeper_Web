@@ -144,7 +144,7 @@
         mounted: function () {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "/getUsers", true);
+            xhr.open("GET", "/user/list", true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
             xhr.onreadystatechange = () => {
@@ -224,7 +224,7 @@
                 console.log(data);
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/setUsersState", true);
+                xhr.open("POST", "/user/state", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {
@@ -273,7 +273,7 @@
                 console.log(data);
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/setUsersState", true);
+                xhr.open("POST", "/user/state", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {

@@ -107,7 +107,7 @@
 
             logout: function () {
                 let xhr = new XMLHttpRequest();
-                xhr.open("GET", "/logoutNow", true);
+                xhr.open("GET", "/auth/logout", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {

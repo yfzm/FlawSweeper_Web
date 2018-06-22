@@ -154,7 +154,7 @@
                         console.log(data);
 
                         let xhr = new XMLHttpRequest();
-                        xhr.open("POST", "/doRegister", true);
+                        xhr.open("POST", "/auth/register", true);
                         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                         xhr.onreadystatechange = () => {

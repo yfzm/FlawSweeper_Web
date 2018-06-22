@@ -76,7 +76,7 @@
         mounted: function () {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "/getUsername", true);
+            xhr.open("GET", "/user/username", true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
             xhr.onreadystatechange = () => {
@@ -109,7 +109,7 @@
 
             quit: function () {
                 let xhr = new XMLHttpRequest();
-                xhr.open("GET", "/logoutNow", true);
+                xhr.open("GET", "/auth/logout", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {
@@ -132,7 +132,7 @@
 
             switch_to_normal: function () {
                 let xhr = new XMLHttpRequest();
-                xhr.open("GET", "/logoutNow", true);
+                xhr.open("GET", "/auth/logout", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {

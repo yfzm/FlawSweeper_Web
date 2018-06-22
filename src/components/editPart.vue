@@ -142,7 +142,7 @@
 
             this.item_id = this.$route.query.id;
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "/getDetail?id=" + this.item_id, true);
+            xhr.open("GET", "/item/entry?id=" + this.item_id, true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
             xhr.onreadystatechange = () => {
@@ -171,7 +171,7 @@
 
             fetchAllTags: function () {
                 let xhr = new XMLHttpRequest();
-                xhr.open("GET", "/getAllTags", true);
+                xhr.open("GET", "/item/tags", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {
@@ -244,7 +244,7 @@
                 console.log(data);
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/editItem", true);
+                xhr.open("POST", "/item/entry", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {
@@ -280,7 +280,7 @@
                 console.log(data);
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/addItem", true);
+                xhr.open("PUT", "/item/entry", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {

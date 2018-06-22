@@ -12,7 +12,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "echarts": "^4.1.0",
     "iview": "^2.13.0",
+    "v-charts": "^1.17.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "wangeditor": "^3.1.1"
