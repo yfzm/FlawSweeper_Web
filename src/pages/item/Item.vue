@@ -8,7 +8,7 @@
 
             <Content class="body_page text-left">
                 <div>
-                    <p class="topic-num"><Button type="text" @click="$router.go(-1)">返回主页</Button> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <p class="topic-num"><Button type="text" @click="$router.push('/notepad')">返回主页</Button> &nbsp;&nbsp;&nbsp;&nbsp;
                         {{ topic_data.title }}
                         <!--&nbsp;&nbsp;&nbsp;&nbsp; <span class="topic-id">#{{ topic_data.id }}</span>-->
                     </p>

@@ -110,8 +110,12 @@
                     <i-col span="17" offset="1">
                         <div class="right_part">
 
-                            <div v-if="!(searchWord === null || searchWord === undefined) && searchWord.length !== 0" class="search-info">
-                                <p>搜索结果： {{ this.searchWord }}</p>
+                            <div v-if="!(searchWord === null || searchWord === undefined) && searchWord.length !== 0"
+                                 class="search-info">
+                                <p>
+                                    搜索结果： {{ this.searchWord }} &nbsp;&nbsp;
+                                    <Button type="text" @click='cancel_search'>取消</Button>
+                                </p>
 
                             </div>
 
@@ -198,7 +202,9 @@
                                                             <Button type="text" @click="redo(item.id)">重做</Button>
                                                         </i-col>
                                                         <i-col span="8" class="col-manage edit">
-                                                            <Button type="text" :disabled="item.bySelf===false" @click="edit(item.id)">编辑</Button>
+                                                            <Button type="text" :disabled="item.bySelf===false"
+                                                                    @click="edit(item.id)">编辑
+                                                            </Button>
                                                         </i-col>
                                                         <!--<i-col span="6" class="col-manage del">-->
                                                         <!--<Button type="text">删除</Button>-->
@@ -290,7 +296,7 @@
         },
 
         methods: {
-            requestData: function (page, method, word="") {
+            requestData: function (page, method, word = "") {
                 let xhr = new XMLHttpRequest();
                 xhr.open("GET", "/item/list?page=" + page + "&method=" + method + "&word=" + word, true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
@@ -395,10 +401,26 @@
             parse_time: function (sec) {
                 if (typeof sec === 'number') {
                     let date = new Date(sec);
-                    return date.getFullYear() + "/" + (date.getMonth()+1) + "/" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                    return date.getFullYear()
+                        + "/" + this.PrefixInteger(date.getMonth() + 1)
+                        + "/" + this.PrefixInteger(date.getDate())
+                        + " " + this.PrefixInteger(date.getHours())
+                        + ":" + this.PrefixInteger(date.getMinutes())
+                        + ":" + this.PrefixInteger(date.getSeconds());
                 } else {
                     return sec;
                 }
+            },
+
+            /**
+             * @return {string}
+             */
+            PrefixInteger: function (num) {
+                let num_str = num.toString();
+                if (num_str.length === 1) {
+                    num_str = "0" + num_str;
+                }
+                return num_str;
             },
 
             handle_search: function (word) {
@@ -410,6 +432,13 @@
                 this.page = 0;
                 this.requestData(this.page, "time", word);
 
+            },
+
+            cancel_search: function () {
+                this.page = 0;
+                this.searchWord = null;
+                console.log(">>> " + this.page);
+                this.requestData(this.page, "time");
             }
         },
 

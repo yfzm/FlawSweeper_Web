@@ -337,7 +337,7 @@
                 console.log(data);
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/deleteUsers", true);
+                xhr.open("POST", "/user/deleteUsers", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {
