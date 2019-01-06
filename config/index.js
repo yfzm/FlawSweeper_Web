@@ -4,7 +4,7 @@
 
 const path = require('path');
 // const tomcat_dir = '\\code\\Web\\FlawSweeper\\FlawSweeper_Server\\web';
-const tomcat_dir = '\\code\\Web\\FlawSweeper\\FlawSweeper_Server_Spring\\src\\main\\webapp';
+// const tomcat_dir = '\\code\\Web\\FlawSweeper\\FlawSweeper_Server_Spring\\src\\main\\webapp';
 
 module.exports = {
     dev: {
@@ -40,15 +40,15 @@ module.exports = {
 
     build: {
         // Template for index.html
-        index: path.resolve(tomcat_dir, 'index.html'),
+        // index: path.resolve(tomcat_dir, 'index.html'),
 
         // Paths
-        assetsRoot: path.resolve(tomcat_dir),    // Template for index.html
+        // assetsRoot: path.resolve(tomcat_dir),    // Template for index.html
 
-        // index: path.resolve(__dirname, '../dist/index.html'),
+        index: path.resolve(__dirname, '../dist/index.html'),
         //
-        // // Paths
-        // assetsRoot: path.resolve(__dirname, '../dist'),
+        // Paths
+        assetsRoot: path.resolve(__dirname, '../dist'),
 
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',

@@ -1,0 +1,15 @@
+workspace:
+    base: /frontend
+    path: src/github.com/yfzm/FlawSweeper_Web
+pipeline:
+    build:
+        image: node:latest
+        commands:
+        - npm install
+        - npm run-script build
+    publish:
+        image: plugins/docker
+        repo: bywind/flawsweeper-frontend
+        tags: ["latest"]
+        secrets: [ docker_username, docker_password ]
+        dockerfile: Dockerfile
