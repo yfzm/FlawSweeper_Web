@@ -1,6 +1,7 @@
 workspace:
     base: /frontend
     path: src/github.com/yfzm/FlawSweeper_Web
+
 pipeline:
     build:
         image: node:10.15.0
