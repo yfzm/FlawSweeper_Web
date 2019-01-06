@@ -3,7 +3,7 @@ workspace:
     path: src/github.com/yfzm/FlawSweeper_Web
 pipeline:
     build:
-        image: node:latest
+        image: node:10.15.0
         commands:
         - npm install
         - npm run-script build
