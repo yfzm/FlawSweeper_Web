@@ -61,7 +61,7 @@
                 let data = `username=${this.formInline.user}&password=${this.formInline.password}&type=1`;
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", "/auth/login", true);
+                xhr.open("POST", "http://webkiwi:8000/auth/login", true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {

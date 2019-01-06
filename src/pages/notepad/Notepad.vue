@@ -298,7 +298,7 @@
         methods: {
             requestData: function (page, method, word = "") {
                 let xhr = new XMLHttpRequest();
-                xhr.open("GET", "/item/list?page=" + page + "&method=" + method + "&word=" + word, true);
+                xhr.open("GET", "http://webkiwi:8000/item/list?page=" + page + "&method=" + method + "&word=" + word, true);
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                 xhr.onreadystatechange = () => {
