@@ -133,7 +133,7 @@
         mounted: function () {
 
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://webkiwi:8000/userProfile", true);
+            xhr.open("GET", "http://212.129.145.211:30001/userProfile", true);
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
             xhr.onreadystatechange = () => {
@@ -185,7 +185,7 @@
                         console.log(data);
 
                         let xhr = new XMLHttpRequest();
-                        xhr.open("POST", "http://webkiwi:8000/userProfile", true);
+                        xhr.open("POST", "http://212.129.145.211:30001/userProfile", true);
                         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                         xhr.onreadystatechange = () => {

@@ -154,7 +154,7 @@
                         console.log(data);
 
                         let xhr = new XMLHttpRequest();
-                        xhr.open("POST", "http://webkiwi:8000/auth/register", true);
+                        xhr.open("POST", "http://212.129.145.211:30001/auth/register", true);
                         xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
                         xhr.onreadystatechange = () => {
